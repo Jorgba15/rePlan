@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "server package for rePlan app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jorgba15/rePlan.git"
+  },
+  "author": "jørgen bordal andersen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jorgba15/rePlan/issues"
+  },
+  "homepage": "https://github.com/Jorgba15/rePlan#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
