@@ -1,0 +1,38 @@
+
+Schema:
+{
+    user:{
+        "type":"array"
+        "items":[
+            {
+             "name":{"type":"string"},
+             "password":{"type":"string"},
+             "id":{"type":"int"}
+            }
+        ]
+    }
+}
+Tasks:{
+        "type":"array"
+        "items":[
+            {
+             "toBeDone":{"type":"string"},
+             "doing":{"type":"string"},
+             "done": {"type":"string"},
+             "description":{"type":"string"}
+            }
+        ]
+    }
+
+
+Example:
+{
+    user:[
+        {"name":"exampleName", "password":"examplePassword", "id":"1"}
+    ]
+}
+{
+    Tasks:[
+        {"toBeDone":"Array of items", "doing":"Array of items", "done": "Array of items", "description":"Example description"}
+    ]
+}
