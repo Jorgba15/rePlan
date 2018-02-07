@@ -1,31 +1,32 @@
 
 Schema:
 {
-    user:{
+    users:{
         "type":"array"
         "items":[
             {
-             "name":{"type":"string"},
-             "password":{"type":"string"},
+             "name":{"type":"varchar"},
+             "password":{"type":"varchar"},
              "id":{"type":"int"}
             }
         ]
     }
 }
-Tasks:{
+tasks:{
         "type":"array"
         "items":[
             {
-             "toBeDone":{"type":"string"},
-             "doing":{"type":"string"},
-             "done": {"type":"string"},
-             "description":{"type":"string"}
+             "toBeDone":{"type":"varchar"},
+             "doing":{"type":"varchar"},
+             "done": {"type":"varchar"},
+             "description":{"type":"varchar"},
+             "id":{"type":"varchar"}
             }
         ]
     }
 
 
-Example:
+example:
 {
     user:[
         {"name":"exampleName", "password":"examplePassword", "id":"1"}
