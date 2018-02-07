@@ -1,7 +1,7 @@
 
 Schema:
 {
-    user:{
+    users:{
         "type":"array"
         "items":[
             {
