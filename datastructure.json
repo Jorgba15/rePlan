@@ -12,7 +12,7 @@ Schema:
         ]
     }
 }
-Tasks:{
+tasks:{
         "type":"array"
         "items":[
             {
@@ -25,7 +25,7 @@ Tasks:{
     }
 
 
-Example:
+example:
 {
     user:[
         {"name":"exampleName", "password":"examplePassword", "id":"1"}
