@@ -5,9 +5,10 @@ Schema:
         "type":"array"
         "items":[
             {
-             "name":{"type":"varchar"},
-             "password":{"type":"varchar"},
-             "id":{"type":"int"}
+             "name":{"type":"text"},
+             "password":{"type":"text"},
+             "id":{"type":"int"},
+             "numberOfLists": {"type": "int"}
             }
         ]
     }
@@ -16,11 +17,11 @@ tasks:{
         "type":"array"
         "items":[
             {
-             "toBeDone":{"type":"varchar"},
-             "doing":{"type":"varchar"},
-             "done": {"type":"varchar"},
-             "description":{"type":"varchar"},
-             "id":{"type":"varchar"}
+             "toBeDone":{"type":"boolean"},
+             "doing":{"type":"boolean"},
+             "done": {"type":"boolean"},
+             "description":{"type":"text"},
+             "id":{"type":"int"}
             }
         ]
     }
