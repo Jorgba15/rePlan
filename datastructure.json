@@ -1,5 +1,4 @@
-
-Schema:
+Schema: 
 {
     users:{
         "type":"array"
@@ -13,7 +12,8 @@ Schema:
         ]
     }
 }
-tasks:{
+
+    lists:{
         "type":"array"
         "items":[
             {
@@ -21,20 +21,22 @@ tasks:{
              "doing":{"type":"boolean"},
              "done": {"type":"boolean"},
              "description":{"type":"text"},
-             "id":{"type":"int"}
+             "listName":{"type":"text"},
+             "id":{"type":"int"},
+             "sharing":{"type":"boolean"}
+             "deadline": {"type":"time"} // midlertidig. tid? dato/klokkeslett?
             }
         ]
     }
 
 
-example:
-{
-    user:[
-        {"name":"exampleName", "password":"examplePassword", "id":"1"}
-    ]
-}
-{
-    Tasks:[
-        {"toBeDone":"Array of items", "doing":"Array of items", "done": "Array of items", "description":"Example description"}
-    ]
-}
+    example:{
+        
+        user:[
+            {"name":"exampleName", "password":"examplePassword", "id":"1", "numberOfLists": "2"}
+            ]}
+
+        list:[
+            {"toBeDone":"list of items", "doing":"list of items", "done": "list of items", "description":"this is a short description of the task", "listName": "myList", "id"="1", "sharing"="true", "deadline":"20.03.2018"}
+        ]}
+    }
