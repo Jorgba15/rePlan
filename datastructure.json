@@ -5,36 +5,52 @@ Schema:
         "type":"array"
         "items":[
             {
-             "name":{"type":"text"},
-             "password":{"type":"text"},
+             "userName":{"type":"text"},
+             "password_hash":{"type":"text"},
              "id":{"type":"int"},
-             "numberOfLists": {"type": "int"}
             }
         ]
     }
-}
-tasks:{
+
+    lists:{
+        "type":"array"
+        "items": [
+            {
+             "list_id":{"type":"int"},
+             "listName":{"type":"text"},
+             "description":{"type":"text"}
+            }
+        ]
+    }
+
+    tasks:{
         "type":"array"
         "items":[
             {
-             "toBeDone":{"type":"boolean"},
-             "doing":{"type":"boolean"},
              "done": {"type":"boolean"},
-             "description":{"type":"text"},
-             "id":{"type":"int"}
+             "task_id":{"type":"int"},
+             "deadline":{"type":"date"}
             }
         ]
     }
 
+}
 
 example:
 {
-    user:[
-        {"name":"exampleName", "password":"examplePassword", "id":"1"}
+    users:[
+        {"userName":"exampleName", "password":"examplePassword", "id":"1"}
     ]
 }
+
 {
-    Tasks:[
-        {"toBeDone":"Array of items", "doing":"Array of items", "done": "Array of items", "description":"Example description"}
+    lists:[
+        {"list_id":"1", "listName":"myList", "description":"List of things i have to do today."}
+    ]
+}
+
+{
+    tasks:[
+        {"done":"false", "task_id":"2", "deadline": "01.03.2018"}
     ]
 }
