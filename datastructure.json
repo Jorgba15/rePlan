@@ -51,6 +51,6 @@ example:
 
 {
     tasks:[
-        {"done":"false", "task_id":"2", "deadline": "01.03.2018"}
+        {"done":"false", "task_id":"2", "deadline": "01.03.2018", "tag":"important!"}
     ]
 }
