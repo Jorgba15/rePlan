@@ -1,0 +1,56 @@
+
+Schema:
+{
+    users:{
+        "type":"array"
+        "items":[
+            {
+             "userName":{"type":"text"},
+             "password_hash":{"type":"text"},
+             "id":{"type":"int"},
+            }
+        ]
+    }
+
+    lists:{
+        "type":"array"
+        "items": [
+            {
+             "list_id":{"type":"int"},
+             "listName":{"type":"text"},
+             "description":{"type":"text"}
+            }
+        ]
+    }
+
+    tasks:{
+        "type":"array"
+        "items":[
+            {
+             "done": {"type":"boolean"},
+             "task_id":{"type":"int"},
+             "deadline":{"type":"date"}
+            }
+        ]
+    }
+
+}
+
+example:
+{
+    users:[
+        {"userName":"exampleName", "password":"examplePassword", "id":"1"}
+    ]
+}
+
+{
+    lists:[
+        {"list_id":"1", "listName":"myList", "description":"List of things i have to do today."}
+    ]
+}
+
+{
+    tasks:[
+        {"done":"false", "task_id":"2", "deadline": "01.03.2018"}
+    ]
+}
