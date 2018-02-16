@@ -28,7 +28,8 @@ Schema:
             {
              "done": {"type":"boolean"},
              "task_id":{"type":"int"},
-             "deadline":{"type":"date"}
+             "deadline":{"type":"date"},
+             "tag": {"type":"text"}
             }
         ]
     }
