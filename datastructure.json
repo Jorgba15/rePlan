@@ -7,7 +7,6 @@ Schema:
             {
              "userName":{"type":"text"},
              "password_hash":{"type":"text"},
-             "id":{"type":"int"},
             }
         ]
     }
