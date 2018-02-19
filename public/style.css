@@ -1,0 +1,47 @@
+button {
+    width: 400px;
+    margin-bottom: 5px;
+    height: 40px;
+    font-size: 14pt;
+    border-radius: 8px;
+    color: white;
+    background-color: #008CBA;
+}
+
+
+h1{
+    text-align: center;
+
+}
+
+p { font-family: sans-serif;}
+
+
+#boks{
+    text-align: center;
+    border-radius: 20px;
+    border-color:lightblue;
+    border-style:dashed;
+    margin: 0 auto;
+    background-color:;
+    opacity: 0.9;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width: 800px;
+}
+
+#velkommen{
+font-family:sans-serif;
+color:red;
+
+}
+
+#submitbtn{
+    width: 400px;
+    margin-bottom: 5px;
+    height: 40px;
+    font-size: 14pt;
+    border-radius: 8px;
+    color: white;
+    background-color: #008CBA;
+}
