@@ -28,7 +28,7 @@ Schema:
             {
              "done": {"type":"boolean"},
              "task_id":{"type":"int"},
-             "deadline":{"type":"date"},
+             "deadline":{"type":"timestamp"},
              "tag": {"type":"text"}
             }
         ]
