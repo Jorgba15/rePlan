@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const pg = require('pg');
 const app = express();
 
 app.set('port', (process.env.PORT || 8080));
@@ -19,12 +20,10 @@ app.listen(process.env.PORT || 8080, function () {
     console.log('Listening');
 });
 
-/* Something like this. 
 
-app.post('/', function(req, res) {
+app.post('/user', function(req, res) {
 
     res.send('Username: ' + req.body.username);
+    res.send('password: ' + req.body.password);
 
 };
-
-*/
