@@ -6,7 +6,8 @@ const auth = require('./authentication/authorize.js')("admin",process.env.superU
 
 app.use(bodyParser.json());
 app.use(express.static("./public"));
-var db = require('./dbconnect.js');
+
+let db = require('./dbconnect.js');
 
 
 app.get('/',auth, function (req, res) {
@@ -18,7 +19,6 @@ app.listen(process.env.PORT || 8080, function () {
     console.log('Listening');
 });
 
-console.log("test");
 /* Database-ting --------------------------------------------------------------
 
 app.use(function(req, res, next) {
