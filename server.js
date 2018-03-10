@@ -1,9 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const pg = require('pg');
 const app = express();
-
-app.set('port', (process.env.PORT || 8080));
 
 const auth = require('./authentication/authorize.js')("admin",process.env.superUser || "password");
 
@@ -20,6 +17,14 @@ app.listen(process.env.PORT || 8080, function () {
     console.log('Listening');
 });
 
+/* Database-ting --------------------------------------------------------------
+
+app.use(function(req, res, next) {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.set("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+    next();
+});
+
 
 app.post('/user', function(req, res) {
 
@@ -27,3 +32,4 @@ app.post('/user', function(req, res) {
     res.send('password: ' + req.body.password);
 
 };
+*/
