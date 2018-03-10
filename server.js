@@ -6,6 +6,7 @@ const auth = require('./authentication/authorize.js')("admin",process.env.superU
 
 app.use(bodyParser.json());
 app.use(express.static("./public"));
+var db = require('./dbconnect.js');
 
 
 app.get('/',auth, function (req, res) {
