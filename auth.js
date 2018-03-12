@@ -1,3 +1,4 @@
+/* NOT MY CODE.
 module.exports = function (user, pw) {
     let adminUser = user;
     let adminPassword = pw;
@@ -29,3 +30,4 @@ module.exports = function (user, pw) {
         }
     }
 }
+*/
