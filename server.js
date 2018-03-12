@@ -20,7 +20,8 @@ app.get('/',auth, function (req, res) {
 
 app.post("/user", function(req, res) {
     // Post request from createUser.html and loginUser.html is handeled here.
-    console.log("hm.");
+    let staticApp = readTextFile(".public/lists.html");
+    res.send(staticApp);
 
 })
 
