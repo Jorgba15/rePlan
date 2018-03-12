@@ -19,8 +19,7 @@ app.get('/',auth, function (req, res) {
 // ENDPOINTS
 
 app.post("/user", function(req, res) {
-    let staticApp = readTextFile("./public/lists.html");
-    res.send(staticApp);
+    res.send("hello world");
 })
 
 
