@@ -18,11 +18,8 @@ app.get('/',auth, function (req, res) {
 */
 // ENDPOINTS
 
-app.post("/user", bodyParser, function(req, res) {
-    // Post request from createUser.html and loginUser.html is handeled here.
-    let staticApp = readTextFile(".public/lists.html");
-    res.send(staticApp);
-
+app.post("/user", function(req, res) {
+    res.send("hello world");
 })
 
 
