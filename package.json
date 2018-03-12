@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Jorgba15/rePlan#readme",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "pg-promise": "^8.2.2"
   }
 }
