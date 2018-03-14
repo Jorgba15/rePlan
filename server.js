@@ -9,19 +9,30 @@ app.use(express.static("./public"));
 
 let db = require('./dbconnect.js');
 
-/* Don't use this right now
-app.get('/',auth, function (req, res) {
-    let staticApp = readTextFile(".public/lists.html");
-    res.send(staticApp);
-});
 
-*/
 // ENDPOINTS
 
-app.post("/user", function(req, res) {
-    res.send("hello world");
-})
+app.use(function(req, res, next) {
 
+    res.set('Access-Control-Allow-Origin', '*');
+    res.set("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+    next();
+
+});
+// Routing -----------------------------------
+
+/* not implemented yet
+
+    let users = require('./users.js');
+    app.use('/users/', users);
+
+    var list = require('./list.js');
+    app.use('/list/', list);
+
+
+    var tasks = require('./tasks.js');
+    app.use('/tasks/', tasks);
+*/
 
 // Tell app to Listen to port --------------------------------
 app.listen(process.env.PORT || 8080, function () {
