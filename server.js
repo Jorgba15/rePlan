@@ -6,11 +6,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.get('/', function(req, res) {
-  let staticApp = readTextFile("public/index.html");
-  res.send(staticApp);
-});
-
+app.use(express.static(__dirname + "/public"));
 
 let db = require('./dbconnect.js');
 
