@@ -2,36 +2,38 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
-const auth = require('./auth.js');
+// const auth = require('./auth.js');
 
 app.use(bodyParser.json());
-app.use(express.static("./public"));
+
+app.get('/', function(req, res) {
+  let staticApp = readTextFile("public/index.html");
+  res.send(staticApp);
+});
+
 
 let db = require('./dbconnect.js');
-
-
-// ENDPOINTS
 
 app.use(function(req, res, next) {
 
     res.set('Access-Control-Allow-Origin', '*');
     res.set("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+    res.set( " Access- Control-Allow -Headers : *");
     next();
 
 });
+
 // Routing -----------------------------------
+/*
+let users = require('./users.js');
+app.use('/users/', users);
 
-/* not implemented yet
-
-    let users = require('./users.js');
-    app.use('/users/', users);
-
-    var list = require('./list.js');
-    app.use('/list/', list);
+let list = require('./list.js');
+app.use('/list/', list);
 
 
-    var tasks = require('./tasks.js');
-    app.use('/tasks/', tasks);
+let tasks = require('./tasks.js');
+app.use('/tasks/', tasks);
 */
 
 // Tell app to Listen to port --------------------------------

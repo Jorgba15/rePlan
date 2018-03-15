@@ -1,12 +1,12 @@
-
 const express = require('express');
+const bodyParser = require('body-parser');
 const router = express.Router();
 const db = require('./dbconnect');
 
 //endpoint: GET lists
 router.get('/', function (req,res){
 
-    var sql = 'SELECT * FROM lists';
+    let sql = 'SELECT * FROM lists';
     db.any(sql).then(function(data){
 
         res.status(200).json(data); //success - send the data as JSON!

@@ -1,11 +1,12 @@
-var express = require('express');
-var router = express.Router();
-var db = require('./dbconnect');
+const express = require('express');
+const bodyParser = require('body-parser');
+const router = express.Router();
+const db = require('./dbconnect');
 
 //endpoint: GET listitems
 app.get('/', function (req,res){
 
-    var sql = 'SELECT * FROM tasks';
+    let sql = 'SELECT * FROM tasks';
 
     db.any(sql).then(function(data){
 
@@ -15,7 +16,7 @@ app.get('/', function (req,res){
 
         res.status(500).json(err);
 
-});
+    });
 
 });
 
