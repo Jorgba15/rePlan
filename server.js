@@ -14,13 +14,13 @@ app.use(function(req, res, next) {
 
     res.set('Access-Control-Allow-Origin', '*');
     res.set("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
-    res.set( " Access- Control-Allow -Headers : *");
+    res.set( "Access- Control-Allow -Headers : *");
     next();
 
 });
 
-// Routing -----------------------------------
-/*
+// Routes -----------------------------------
+
 let users = require('./users.js');
 app.use('/users/', users);
 
@@ -30,7 +30,7 @@ app.use('/list/', list);
 
 let tasks = require('./tasks.js');
 app.use('/tasks/', tasks);
-*/
+
 
 // Tell app to Listen to port --------------------------------
 app.listen(process.env.PORT || 8080, function () {
