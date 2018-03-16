@@ -1,14 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+var path = require('path');
 const app = express();
-
-// const auth = require('./auth.js');
 
 app.use(bodyParser.json());
 
-app.use(express.static(__dirname + "/public"));
-
 let db = require('./dbconnect.js');
+
+// global stuff for all routes.....................
 
 app.use(function(req, res, next) {
 
@@ -19,8 +18,11 @@ app.use(function(req, res, next) {
 
 });
 
-// Routes -----------------------------------
-
+app.get('/', function(req, res) {
+    let staticApp = readTextFile("public/index.html");
+    res.send(staticApp);
+})
+/*
 let users = require('./users.js');
 app.use('/users/', users);
 
@@ -31,8 +33,9 @@ app.use('/list/', list);
 let tasks = require('./tasks.js');
 app.use('/tasks/', tasks);
 
+*/
 
 // Tell app to Listen to port --------------------------------
 app.listen(process.env.PORT || 8080, function () {
-    console.log('Listening');
+    console.log('Server started');
 });
