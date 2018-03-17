@@ -4,7 +4,7 @@ const router = express.Router();
 const db = require('./dbconnect');
 
 //endpoint: GET listitems
-app.get('/', function (req,res){
+app.get('/tasks/', function (req,res){
 
     let sql = 'SELECT * FROM tasks';
 

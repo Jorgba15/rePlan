@@ -3,23 +3,6 @@ const bodyParser = require('body-parser');
 const router = express.Router();
 const db = require('./dbconnect');
 
-app.get('/', function (req,res){
-
-    var sql = 'SELECT * FROM tasks';
-
-    db.any(sql).then(function(data){
-
-        res.status(200).json(data); //success - send the data as JSON!
-                     }
-    }).catch(function(err){
-
-        res.status(500).json(err);
-
-    });
-
-});
-// endpoint, new user --------------------------------------------------------------------
-
 app.post('/user/', bodyParser, function (req, res){
 
     res.set('Access-Control-Allow-Origin', '*');
@@ -30,7 +13,7 @@ app.post('/user/', bodyParser, function (req, res){
     let sql = `PREPARE insert_users (int, text, text,) AS INSERT INTO users VALUES(DEFAULT, $2); EXECUTE insert_users (0, '${upload.username}', '${upload.password}')`;
 
     let client = new Client({
-            connectionString:process.env.DATABASE_URL || con,
+            connectionString:process.env.DATABASE_URL || db, // connection string? 
             ssl:true
     });
 

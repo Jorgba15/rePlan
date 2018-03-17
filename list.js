@@ -4,7 +4,7 @@ const router = express.Router();
 const db = require('./dbconnect');
 
 //endpoint: GET lists
-router.get('/', function (req,res){
+router.get('/list/', function (req,res){
 
     let sql = 'SELECT * FROM lists';
     db.any(sql).then(function(data){
@@ -13,7 +13,7 @@ router.get('/', function (req,res){
                      }
 }).catch(function(err){
 
-         res.status(500).json(err);
+        res.status(500).json(err);
 
 });
 
