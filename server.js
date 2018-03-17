@@ -35,7 +35,7 @@ app.post('/user', bodyParser, function (req, res) {
     let upload = JSON.parse(req.body);
     let encrPass = bcrypt.hashSync(upload.password, 10); // hash password
 
-    let sql = `PREPARE insert_user(varchar(240), varchar(240) AS
+    let sql = `PREPARE insert_user (TEXT, TEXT) AS
         INSERT INTO users VALUES(DEFAULT, $2); EXECUTE insert_user
         (0, '${upload.username}', ${encrPass}')`;
 
@@ -58,7 +58,6 @@ db.any(sql).then(function(data) {
     });
 
 });
-
 
 // Tell app to Listen to port --------------------------------
 app.listen(process.env.PORT || 8080, function () {
