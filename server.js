@@ -26,7 +26,7 @@ app.use(function(req, res, next) {
 app.get('/', function(req, res) {
     let staticApp = readTextFile("public/index.html");
     res.send(staticApp);
-})
+});
 
 // endpoint POST USER ------------------------------
 
