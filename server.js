@@ -10,6 +10,8 @@ app.use(bodyParser.json());
 
 let db = require('./dbconnect.js');
 
+var secret = "supersecret";
+
 // global stuff for all routes.....................
 
 app.use(function(req, res, next) {
