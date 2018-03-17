@@ -52,7 +52,7 @@ db.any(sql).then(function(data) {
 
     }).catch(function(err) {
 
-    console.log("user.js error");
+    console.log("user error");
     res.status(500).json({err});
 
     });
