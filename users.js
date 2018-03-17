@@ -1,3 +1,4 @@
+/*
 const express = require('express');
 const bodyParser = require('body-parser');
 const router = express.Router();
@@ -13,7 +14,7 @@ app.post('/user/', bodyParser, function (req, res){
     let sql = `PREPARE insert_users (int, text, text,) AS INSERT INTO users VALUES(DEFAULT, $2); EXECUTE insert_users (0, '${upload.username}', '${upload.password}')`;
 
     let client = new Client({
-            connectionString:process.env.DATABASE_URL || db, // connection string? 
+            connectionString:process.env.DATABASE_URL || db, // connection string?
             ssl:true
     });
 
@@ -27,3 +28,4 @@ app.post('/user/', bodyParser, function (req, res){
 
 // export module
 module.exports = router;
+*/
