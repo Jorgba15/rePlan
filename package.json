@@ -20,6 +20,7 @@
     "express": "^4.16.2",
     "express-validator": "^5.0.3",
     "jsonwebtoken": "^8.2.0",
-    "pg-promise": "^8.2.2"
+    "pg-promise": "^8.2.2",
+    "bcrypt": "^0.8.7"
   }
 }
