@@ -67,6 +67,50 @@ db.any(sql).then(function(data) {
 
 });
 
+// Edpoint login ---------------------------------------
+
+
+app.post('/login/', bodyParser, function (req, res) {
+
+   var upload = JSON.parse(req.body);
+
+   var sql = `PREPARE get_user (text) AS
+                   SELECT * FROM users WHERE username=$1;
+                   EXECUTE get_user('${upload.username}')`;
+
+   db.any(sql).then(function(data) {
+
+       db.any("DEALLOCATE get_user");
+
+       //if wrong user or password -> quit
+       if (data.length <= 0) {
+           res.status(403).json({msg: "user name does not exists"}); //send
+           return; //quit
+       } else {
+
+           //check if the password is correct
+           var psw = upload.password;
+           var encPsw = data[0].password;
+           var result = bcrypt.compareSync(psw, encPsw);
+
+           if (!result) {
+               res.status(403).json({msg: "Wrong password"}); //send
+               return; //quit
+           }
+       }
+
+       //we have a valid user -> create the token
+       var payload = {loginname: data[0].loginname};
+       var tok = jwt.sign(payload, secret, {expiresIn: "12h"});
+
+       //send logininfo + token to the client
+       res.status(200).json({loginname: data[0].loginname, token: tok});
+
+       }).catch(function(err) {
+
+           res.status(500).json({err, msg: "error in users.js"});
+
+       });
 
 // Tell app to Listen to port --------------------------------
 app.listen(process.env.PORT || 8080, function () {
