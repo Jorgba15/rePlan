@@ -25,12 +25,6 @@ app.use(function(req, res, next) {
 
 // Root, the server shows the index page.
 
-var pgp = require('pg-promise')();
-
-//db connect string
-var con = process.env.DATABASE_URL || 'postgres://npqasiwaemucmm:e3957a2831921db77732a6677da46574476957600c649568b449a8442764f3e7@ec2-54-247-101-202.eu-west-1.compute.amazonaws.com:5432/d8m8khsgfiqpk9';
-
-
 app.get('/', function(req, res) {
     let staticApp = readTextFile("public/index.html");
     res.send(staticApp);
@@ -70,7 +64,7 @@ db.any(sql).then(function(data) {
 // Edpoint login ---------------------------------------
 
 
-app.post('/login/', bodyParser, function (req, res) {
+/* app.post('/login/', bodyParser, function (req, res) {
 
    var upload = JSON.parse(req.body);
 
@@ -111,6 +105,7 @@ app.post('/login/', bodyParser, function (req, res) {
            res.status(500).json({err, msg: "error in users.js"});
 
        });
+    */
 
 // Tell app to Listen to port --------------------------------
 app.listen(process.env.PORT || 8080, function () {
