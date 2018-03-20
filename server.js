@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 let db = require('./dbconnect.js');
 
-let secret = "supersecret";
+let secret = "superdupersecret";
 
 // global stuff for all routes.....................
 
@@ -102,7 +102,7 @@ app.post('/login/', bodyParser, function (req, res) {
 
        }).catch(function(err) {
 
-           res.status(500).json({err, msg: "error in users.js"});
+           res.status(500).json({err, msg: "error in users"});
 
        });
 */
