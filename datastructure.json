@@ -5,6 +5,7 @@ Schema:
         "type":"array"
         "items":[
             {
+             "user_id": {"type":"int"},
              "userName":{"type":"text"},
              "password_hash":{"type":"text"},
             }
