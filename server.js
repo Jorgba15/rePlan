@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 let db = require('./dbconnect.js');
 
-var secret = "supersecret";
+let secret = "supersecret";
 
 // global stuff for all routes.....................
 
@@ -47,8 +47,8 @@ db.any(sql).then(function(data) {
     //db.any("DEALLOCATE insert_user");
 
     //create the token
-    var payload = {username: upload.username};
-    var tok = jwt.sign(payload, secret, {expiresIn: "12h"});
+    let payload = {username: upload.username};
+    let tok = jwt.sign(payload, secret, {expiresIn: "12h"});
 
     //send logininfo + token to the client
     res.status(200).json({username: upload.username, token: tok});
@@ -62,14 +62,13 @@ db.any(sql).then(function(data) {
 
 });
 
-// Edpoint login ---------------------------------------
+// Endpoint login --------------------------------------- Wanted to try this, but the app crashed.
+/*
+app.post('/login/', bodyParser, function (req, res) {
 
+   let upload = JSON.parse(req.body);
 
-/* app.post('/login/', bodyParser, function (req, res) {
-
-   var upload = JSON.parse(req.body);
-
-   var sql = `PREPARE get_user (text) AS
+   let sql = `PREPARE get_user (text) AS
                    SELECT * FROM users WHERE username=$1;
                    EXECUTE get_user('${upload.username}')`;
 
@@ -79,14 +78,14 @@ db.any(sql).then(function(data) {
 
        //if wrong user or password -> quit
        if (data.length <= 0) {
-           res.status(403).json({msg: "user name does not exists"}); //send
+           res.status(403).json({msg: "user name does not exists"}); //send //403, forbidden
            return; //quit
        } else {
 
            //check if the password is correct
-           var psw = upload.password;
-           var encPsw = data[0].password;
-           var result = bcrypt.compareSync(psw, encPsw);
+           let psw = upload.password;
+           let encPsw = data[0].password;
+           let result = bcrypt.compareSync(psw, encPsw);
 
            if (!result) {
                res.status(403).json({msg: "Wrong password"}); //send
@@ -95,8 +94,8 @@ db.any(sql).then(function(data) {
        }
 
        //we have a valid user -> create the token
-       var payload = {loginname: data[0].loginname};
-       var tok = jwt.sign(payload, secret, {expiresIn: "12h"});
+       let payload = {loginname: data[0].loginname};
+       let tok = jwt.sign(payload, secret, {expiresIn: "12h"});
 
        //send logininfo + token to the client
        res.status(200).json({loginname: data[0].loginname, token: tok});
@@ -106,7 +105,7 @@ db.any(sql).then(function(data) {
            res.status(500).json({err, msg: "error in users.js"});
 
        });
-    */
+*/
 
 // Tell app to Listen to port --------------------------------
 app.listen(process.env.PORT || 8080, function () {

@@ -1,4 +1,4 @@
-/*const express = require('express');
+const express = require('express');
 const bodyParser = require('body-parser');
 const router = express.Router();
 const db = require('./dbconnect');
@@ -22,4 +22,3 @@ app.get('/tasks/', function (req,res){
 
 // export module
 module.exports = router;
-*/

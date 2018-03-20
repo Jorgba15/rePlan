@@ -1,4 +1,3 @@
-/*
 const express = require('express');
 const bodyParser = require('body-parser');
 const router = express.Router();
@@ -22,4 +21,3 @@ router.get('/list/', function (req,res){
 
 // export module
 module.exports = router;
-*/
